@@ -4,83 +4,161 @@
     box-sizing: border-box;
 }
 
-
-
-
-
 body {
-font-family: 'Segoe UI', sans-serif;
-margin-top: 70px;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #ffffff;
+    color: #222;
 }
 
+/* ---------------- COLORS ---------------- */
+
+:root {
+    --orange: #ffe6cc;
+    --pink: #fff0f5;
+    --blue: #eef6ff;
+    --green: #eefaf1;
+    --accent: #6aa9ff;
+}
+
+/* ---------------- COMMON ---------------- */
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+}
 
 .section {
-padding: 80px 0;
+    padding: 80px 0;
 }
 
-
-.section-title {
-text-align: center;
-font-weight: 700;
-margin-bottom: 40px;
+h1, h2 {
+    margin-bottom: 15px;
 }
 
-
-/* HERO */
-.hero-section {
-height: 90vh;
-background: url(images/bg-hero.jpg) center/cover no-repeat;
-position: relative;
-color: white;
+.center {
+    text-align: center;
 }
 
+/* ---------------- HEADER ---------------- */
 
-.hero-section .overlay {
-position: absolute;
-inset: 0;
-background: rgba(255,255,255,0.2);
+header {
+    background: linear-gradient(
+        90deg,
+        var(--orange),
+        #ffffff,
+        var(--blue)
+    );
+    border-bottom: 1px solid #ddd;
+    padding: 25px 0;
 }
 
-
-.hero-content {
-position: relative;
-top: 50%;
-transform: translateY(-50%);
+.tagline {
+    color: #555;
+    margin-bottom: 15px;
 }
 
-
-/* PASTEL BACKGROUND */
-.pastel-bg {
-background:
-linear-gradient(120deg,
-#ffe5d9,
-#e8f8ff,
-#e9ffe8,
-#ffe9f3);
+nav a {
+    margin: 0 12px;
+    text-decoration: none;
+    font-weight: 600;
+    color: #333;
 }
 
+nav a:hover {
+    color: var(--accent);
+}
 
-/* SERVICE BOXES */
+/* ---------------- HERO ---------------- */
+
+.hero {
+    background:
+        linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)),
+        url("images/bg-hero.jpg");
+    background-size: cover;
+    background-position: center;
+    padding: 120px 0;
+}
+
+.hero h2 {
+    font-size: 34px;
+}
+
+/* ---------------- SOFT SECTIONS ---------------- */
+
+.soft-pink {
+    background: var(--pink);
+}
+
+.soft-blue {
+    background: var(--blue);
+}
+
+.soft-green {
+    background: var(--green);
+}
+
+/* ---------------- SERVICES ---------------- */
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
 .service-box {
-background: white;
-padding: 30px;
-border-radius: 12px;
-text-align: center;
-font-weight: 600;
-box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    background: #ffffff;
+    padding: 18px;
+    border-left: 5px solid #ffb480;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
 
+/* ---------------- PORTFOLIO ---------------- */
 
-.orange { border-top: 5px solid #ffb38a; }
-.pink { border-top: 5px solid #ff9ecb; }
-.blue { border-top: 5px solid #8fd3ff; }
-.green { border-top: 5px solid #9ff0b5; }
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
 
+.portfolio-item {
+    background: #ffffff;
+    border-radius: 4px;
+    padding: 15px;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.06);
+}
 
-/* FOOTER */
-.footer {
-background: #111;
-color: #fff;
-text-align: center;
-padding: 20px;
+.portfolio-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+/* ---------------- CONTACT ---------------- */
+
+#contact a {
+    color: #0077cc;
+    text-decoration: none;
+}
+
+/* ---------------- FOOTER ---------------- */
+
+footer {
+    background: #111;
+    color: #fff;
+    text-align: center;
+    padding: 18px;
+    font-size: 14px;
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+
+@media (max-width: 600px) {
+    nav a {
+        display: inline-block;
+        margin: 8px;
+    }
 }
